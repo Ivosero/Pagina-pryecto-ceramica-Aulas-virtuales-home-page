@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 82" role="img" aria-labelledby="title">
+  <title id="title">Mercado Pago</title>
+  <rect width="310" height="82" rx="18" fill="#009ee3"/>
+  <g transform="translate(15 14)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="29" cy="27" rx="27" ry="22"/>
+    <path d="M9 27c8-9 14-12 21-7l7 5c4 3 9 3 13 0M13 34l8 6m-3-12 12 10m-3-13 12 10"/>
+  </g>
+  <text x="78" y="38" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700">mercado</text>
+  <text x="78" y="63" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700">pago</text>
+</svg>
