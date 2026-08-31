@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terra &amp; Form - Studio Settings</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Design System -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#380d00",
+                        "outline": "#87736c",
+                        "inverse-surface": "#30312e",
+                        "on-secondary-fixed": "#2c1600",
+                        "surface-variant": "#e4e2de",
+                        "surface-container": "#efeeea",
+                        "on-secondary-container": "#7a532a",
+                        "secondary-container": "#ffca98",
+                        "secondary": "#7d562d",
+                        "primary": "#8f482c",
+                        "inverse-primary": "#ffb59a",
+                        "on-tertiary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#f3bb91",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#54433d",
+                        "surface-dim": "#dbdad6",
+                        "surface-container-low": "#f5f3ef",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#924a2e",
+                        "on-surface": "#1b1c1a",
+                        "on-primary-container": "#fffbff",
+                        "primary-container": "#ad6042",
+                        "tertiary": "#7c5330",
+                        "surface-bright": "#fbf9f5",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e4e2de",
+                        "inverse-on-surface": "#f2f0ed",
+                        "tertiary-container": "#986b46",
+                        "on-tertiary-fixed": "#2f1500",
+                        "primary-fixed": "#ffdbce",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdcbd",
+                        "primary-fixed-dim": "#ffb59a",
+                        "secondary-fixed-dim": "#f0bd8b",
+                        "surface": "#fbf9f5",
+                        "tertiary-fixed": "#ffdcc3",
+                        "on-tertiary-fixed-variant": "#643e1e",
+                        "outline-variant": "#d9c1b9",
+                        "surface-container-high": "#eae8e4",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1c1a",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#623f18",
+                        "background": "#fbf9f5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#743419"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1.5rem"
+                    },
+                    "spacing": {
+                        "stack-md": "32px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "16px",
+                        "margin-desktop": "64px",
+                        "stack-lg": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(188, 108, 77, 0.08);
+        }
+
+        .input-minimal {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid theme('colors.outline-variant');
+            border-radius: 0;
+            padding: theme('spacing.unit') 0;
+            color: theme('colors.on-surface');
+            font-family: theme('fontFamily.body-md');
+        }
+
+        .input-minimal:focus {
+            outline: none;
+            border-bottom-color: theme('colors.secondary');
+            box-shadow: 0 1px 0 0 theme('colors.secondary');
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex h-screen w-64 fixed left-0 top-0 z-50 bg-surface-container shadow-xl shadow-primary/5 flex-col p-stack-sm space-y-4">
+<!-- Header -->
+<div class="mb-stack-md flex items-center gap-3 px-3">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span aria-hidden="true" class="font-headline-md text-headline-md leading-none">T</span>
+</div>
+<div>
+<h1 class="font-headline-md text-[20px] leading-tight text-primary">Terra &amp; Form</h1>
+<p class="font-body-md text-[12px] text-on-surface-variant">Artisan Admin Portal</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-primary/90 transition-colors shadow-sm shadow-primary/20 mb-4">
+            New Workshop
+        </button>
+<!-- Navigation Links -->
+<div class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-secondary-fixed/20 hover:text-primary transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-secondary-fixed/20 hover:text-primary transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Course Catalog</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-secondary-fixed/20 hover:text-primary transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Student Progress</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-secondary-fixed/20 hover:text-primary transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Studio Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-secondary-fixed/20 hover:text-primary transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Resource Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-secondary-fixed/20 hover:text-primary transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Communication Center</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold bg-secondary-fixed/30 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar (Responsive) -->
+<header class="w-full sticky top-0 z-40 bg-surface/80 backdrop-blur-md shadow-sm shadow-primary/5 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4">
+<!-- Mobile Brand -->
+<div class="md:hidden">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">Terra &amp; Form</h2>
+</div>
+<!-- Search -->
+<div class="hidden md:flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant/30 focus-within:ring-2 focus-within:ring-secondary/20">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none outline-none font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 w-64" placeholder="Search settings..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 focus:ring-2 focus:ring-secondary/20 outline-none rounded-full p-2">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 focus:ring-2 focus:ring-secondary/20 outline-none rounded-full p-2 hidden md:block">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="Studio Admin Profile" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container" data-alt="A close-up studio portrait of a mature female ceramic artist with clay smudges on her apron, warm studio lighting highlighting the earthy tones, professional and authentic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCrQ540K1U90U3Jvv3fOHi5y1xQiL4i-5LI0TPlztizleqxuZMnERypeY_tVBTY7tfPgBq62pkfIUKMtdcUMiRuGFeK1QY9Rp5rWqc07dmwezPKLCfuWvqEHv-xR4VkxDJfNstQlYoMit5Qypv5hcpzSSNZBEtrgRpbwVByjqzhHwj46cybAKnXi4oj0j0Lc73KVKv6gVQSXVE7ASxiF_KlpcYkSpbHXeGgpL_iPkhcvlBblUWaKMFXw"/>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Page Header & Actions -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-stack-lg gap-6 border-b border-outline-variant/30 pb-stack-md">
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">Studio Settings</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Configure the foundational elements of the Terra &amp; Form platform. Ensure your artisanal brand identity is accurately reflected across all student touchpoints.</p>
+</div>
+<div class="flex items-center gap-4 shrink-0">
+<button class="px-6 py-3 rounded-lg font-label-md text-label-md uppercase border border-outline text-on-surface hover:bg-surface-container transition-colors">
+                        Discard Changes
+                    </button>
+<button class="px-6 py-3 rounded-lg font-label-md text-label-md uppercase bg-primary text-on-primary hover:bg-primary/90 transition-colors shadow-sm shadow-primary/20 hover:shadow-md hover:-translate-y-0.5 transform duration-200">
+                        Save Changes
+                    </button>
+</div>
+</div>
+<!-- Settings Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Settings Navigation (Bento Sidebar) -->
+<nav class="lg:col-span-3 bg-surface-container-low rounded-2xl p-6 ambient-shadow sticky top-32">
+<ul class="space-y-1">
+<li>
+<a class="block px-4 py-3 rounded-lg text-primary font-bold bg-secondary-fixed/20 font-label-md text-label-md uppercase tracking-wider" href="#general">
+                                General Profile
+                            </a>
+</li>
+<li>
+<a class="block px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors font-label-md text-label-md uppercase tracking-wider" href="#billing">
+                                Payments &amp; Billing
+                            </a>
+</li>
+<li>
+<a class="block px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors font-label-md text-label-md uppercase tracking-wider" href="#notifications">
+                                Notifications
+                            </a>
+</li>
+<li>
+<a class="block px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors font-label-md text-label-md uppercase tracking-wider" href="#team">
+                                Team &amp; Access
+                            </a>
+</li>
+</ul>
+</nav>
+<!-- Settings Content Areas -->
+<div class="lg:col-span-9 space-y-stack-lg">
+<!-- General Profile Section -->
+<section class="scroll-mt-32" id="general">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-md flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="storefront">storefront</span>
+                            General Profile
+                        </h2>
+<div class="bg-surface-container-lowest rounded-2xl p-8 ambient-shadow border border-outline-variant/20 space-y-stack-md">
+<!-- Basic Info -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md uppercase text-on-surface-variant">Studio Name</label>
+<input class="input-minimal w-full" type="text" value="Terra &amp; Form Artisan Studio"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md uppercase text-on-surface-variant">Contact Email</label>
+<input class="input-minimal w-full" type="email" value="hello@terraandform.com"/>
+</div>
+</div>
+<!-- Bio/Mission -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md uppercase text-on-surface-variant flex items-center gap-2">
+                                    Artist Bio / Mission Statement
+                                    <span class="material-symbols-outlined text-sm text-outline cursor-help" title="This appears on your public storefront and workshop listings.">info</span>
+</label>
+<textarea class="input-minimal w-full resize-none" rows="4">Cultivating tactile connection through the craft of ceramics. We guide students from raw earth to refined form, emphasizing patience, technique, and intentional design.</textarea>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body></html>

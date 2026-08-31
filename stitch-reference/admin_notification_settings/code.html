@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notification Settings - Terra &amp; Form</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdcc3",
+                        "on-primary-fixed": "#380d00",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f5f3ef",
+                        "primary-container": "#ad6042",
+                        "primary": "#8f482c",
+                        "secondary-fixed": "#ffdcbd",
+                        "tertiary-container": "#986b46",
+                        "on-secondary-fixed": "#2c1600",
+                        "secondary-container": "#ffca98",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c1a",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#623f18",
+                        "on-primary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dbdad6",
+                        "secondary": "#7d562d",
+                        "on-tertiary-fixed": "#2f1500",
+                        "on-surface": "#1b1c1a",
+                        "inverse-surface": "#30312e",
+                        "inverse-primary": "#ffb59a",
+                        "background": "#fbf9f5",
+                        "on-secondary-container": "#7a532a",
+                        "surface-tint": "#924a2e",
+                        "surface-variant": "#e4e2de",
+                        "outline-variant": "#d9c1b9",
+                        "outline": "#87736c",
+                        "on-surface-variant": "#54433d",
+                        "on-tertiary-fixed-variant": "#643e1e",
+                        "error": "#ba1a1a",
+                        "surface": "#fbf9f5",
+                        "surface-container": "#efeeea",
+                        "on-primary-fixed-variant": "#743419",
+                        "surface-container-highest": "#e4e2de",
+                        "primary-fixed": "#ffdbce",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae8e4",
+                        "secondary-fixed-dim": "#f0bd8b",
+                        "primary-fixed-dim": "#ffb59a",
+                        "tertiary-fixed-dim": "#f3bb91",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#fffbff",
+                        "tertiary": "#7c5330",
+                        "surface-bright": "#fbf9f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "stack-lg": "80px",
+                        "gutter": "24px",
+                        "stack-md": "32px",
+                        "container-max": "1280px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #8f482c;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #8f482c;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md flex antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Component -->
+<nav class="bg-background dark:bg-surface-container-lowest text-primary dark:text-primary-fixed-dim docked h-screen w-64 left-0 top-0 shadow-sm dark:shadow-none flex flex-col h-full border-r border-outline-variant/30 flex-shrink-0 z-40 relative">
+<div class="p-6 border-b border-outline-variant/30 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-low shrink-0">
+<img alt="Terra &amp; Form Studio Logo" class="w-full h-full object-cover" data-alt="A minimalist logo for Terra &amp; Form Studio featuring elegant serif typography and abstract geometric shapes in deep terracotta on a warm ivory background. The design is clean, professional, and gallery-like." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu42Qq3KUA7hmtXY1vR8vj9WWRHYDHiK1uL_jEQNMTyV6LrEbNnMgKYendbT_Cu7F9BDcQeHWSaNWpU65pEx6mODp-rPaSYboZ9bXJbQgLeJegseSNIDF4LVg6-Hr5-tcIdnDOVdb8rePKwU9yeWBQLlyJT5VW6RJYnsKv84sgm8_xfXUUPX6BHdSry3DbfmgRMA7ZIG5i4kpSt1pY-gWsrkRbbRbGPtilIIA7nVacFGnmc9kyXuAa2A"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight text-xl leading-tight font-semibold">Terra &amp; Form</h1>
+<p class="font-label-md text-label-md text-on-surface-variant font-medium mt-1">Admin Portal</p>
+</div>
+</div>
+<div class="flex-grow overflow-y-auto py-6 flex flex-col gap-2 px-4">
+<!-- Active Tab Mapping Logic: User prompt specifies 'Admin - Notification Settings' which maps to 'Settings' tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-primary-container/10 dark:hover:bg-primary-fixed-dim/10 transition-colors" href="#">
+<span class="material-symbols-outlined" data-weight="regular">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-primary-container/10 dark:hover:bg-primary-fixed-dim/10 transition-colors" href="#">
+<span class="material-symbols-outlined" data-weight="regular">menu_book</span>
+<span class="font-label-md text-label-md">Course Catalog</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-primary-container/10 dark:hover:bg-primary-fixed-dim/10 transition-colors" href="#">
+<span class="material-symbols-outlined" data-weight="regular">query_stats</span>
+<span class="font-label-md text-label-md">Student Progress</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-primary-container/10 dark:hover:bg-primary-fixed-dim/10 transition-colors" href="#">
+<span class="material-symbols-outlined" data-weight="regular">calendar_today</span>
+<span class="font-label-md text-label-md">Studio Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-primary-container/10 dark:hover:bg-primary-fixed-dim/10 transition-colors" href="#">
+<span class="material-symbols-outlined" data-weight="regular">folder_open</span>
+<span class="font-label-md text-label-md">Resource Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-primary-container/10 dark:hover:bg-primary-fixed-dim/10 transition-colors" href="#">
+<span class="material-symbols-outlined" data-weight="regular">mail</span>
+<span class="font-label-md text-label-md">Communication Center</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary dark:text-primary-fixed-dim font-bold bg-primary-container/10 dark:bg-primary-fixed-dim/10 scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="p-4 border-t border-outline-variant/30 mt-auto">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md hover:bg-surface-tint transition-colors shadow-sm flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">add</span>
+                New Workshop
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar Context (Simplified as per layout description, mainly serves as content header) -->
+<header class="w-full px-12 py-8 bg-background border-b border-outline-variant/30 flex justify-between items-end flex-shrink-0">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2 tracking-tight">Studio Settings</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Manage your studio preferences, integrations, and administrative configurations.</p>
+</div>
+</header>
+<!-- Content Split Layout -->
+<div class="flex flex-grow overflow-hidden">
+<!-- Secondary Settings Navigation -->
+<aside class="w-64 flex-shrink-0 border-r border-outline-variant/30 bg-surface-container-low overflow-y-auto hidden md:block">
+<nav class="py-8 px-6 flex flex-col gap-2">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4 px-3">Configuration</h3>
+<!-- Footer tabs mapped to secondary nav as per prompt instruction -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">person</span>
+<span class="font-label-md text-label-md">General Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">payments</span>
+<span class="font-label-md text-label-md">Payments &amp; Billing</span>
+</a>
+<!-- Active Secondary Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-md bg-surface text-primary border-l-2 border-primary shadow-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">group</span>
+<span class="font-label-md text-label-md">Team &amp; Permissions</span>
+</a>
+</nav>
+</aside>
+<!-- Scrollable Settings Canvas -->
+<div class="flex-grow overflow-y-auto px-8 md:px-16 py-10 pb-32">
+<div class="max-w-3xl mx-auto">
+<!-- Section Header -->
+<div class="mb-12">
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Notification Settings</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Configure automated email triggers and studio alerts for your students and team. Changes are saved automatically when applied.</p>
+</div>
+<!-- Settings Sections -->
+<div class="flex flex-col gap-12">
+<!-- Student Notifications Section -->
+<section class="bg-surface rounded-2xl border border-outline-variant/50 p-8 shadow-[0_4px_24px_rgba(188,108,77,0.03)]">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant/30 pb-4">
+<span class="material-symbols-outlined text-primary">school</span>
+<h4 class="font-headline-md text-headline-md text-xl text-on-background">Student Notifications</h4>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Toggle Item -->
+<div class="flex items-start justify-between gap-8 group">
+<div class="flex-grow">
+<label class="font-label-md text-label-md text-on-background block mb-1 cursor-pointer" for="enrollment">Course Enrollment Confirmation</label>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant">Sends an immediate email receipt and course welcome details upon successful registration.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1 shrink-0">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-surface-variant z-10 transition-transform duration-200" id="enrollment" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200" for="enrollment"></label>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+<!-- Toggle Item -->
+<div class="flex items-start justify-between gap-8 group">
+<div class="flex-grow">
+<label class="font-label-md text-label-md text-on-background block mb-1 cursor-pointer" for="completion">Lesson Completion Emails</label>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant">Triggers a congratulatory email when a student finishes a major module or physical project milestone.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1 shrink-0">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-surface-variant z-10 transition-transform duration-200" id="completion" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200" for="completion"></label>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+<!-- Toggle Item -->
+<div class="flex items-start justify-between gap-8 group">
+<div class="flex-grow">
+<label class="font-label-md text-label-md text-on-background block mb-1 cursor-pointer" for="announcements">New Content Announcements</label>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant">Notifies active students when new studio techniques or video lessons are added to their enrolled courses.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1 shrink-0">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-surface-variant z-10 transition-transform duration-200" id="announcements" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200" for="announcements"></label>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+<!-- Toggle Item -->
+<div class="flex items-start justify-between gap-8 group">
+<div class="flex-grow">
+<label class="font-label-md text-label-md text-on-background block mb-1 cursor-pointer" for="certificate">Certificate Delivery</label>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant">Automatically generates and emails a digital certificate of completion at the end of a masterclass.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1 shrink-0">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-surface-variant z-10 transition-transform duration-200" id="certificate" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200" for="certificate"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- Studio Alerts Section -->
+<section class="bg-surface rounded-2xl border border-outline-variant/50 p-8 shadow-[0_4px_24px_rgba(188,108,77,0.03)]">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant/30 pb-4">
+<span class="material-symbols-outlined text-primary">storefront</span>
+<h4 class="font-headline-md text-headline-md text-xl text-on-background">Studio Alerts</h4>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Toggle Item -->
+<div class="flex items-start justify-between gap-8 group">
+<div class="flex-grow">
+<label class="font-label-md text-label-md text-on-background block mb-1 cursor-pointer" for="inquiry">New Student Inquiry</label>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant">Alerts administrators when a prospective student submits a question via the public course pages.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1 shrink-0">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-surface-variant z-10 transition-transform duration-200" id="inquiry" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200" for="inquiry"></label>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+<!-- Toggle Item -->
+<div class="flex items-start justify-between gap-8 group">
+<div class="flex-grow">
+<label class="font-label-md text-label-md text-on-background block mb-1 cursor-pointer" for="soldout">Course Sold Out Alerts</label>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant">Notifies instructors when a limited-capacity physical workshop reaches its maximum enrollment.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1 shrink-0">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-surface-variant z-10 transition-transform duration-200" id="soldout" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200" for="soldout"></label>
+</div>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+<!-- Toggle Item -->
+<div class="flex items-start justify-between gap-8 group">
+<div class="flex-grow">
+<label class="font-label-md text-label-md text-on-background block mb-1 cursor-pointer" for="daily">Daily Schedule Summary</label>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant">Sends a morning brief detailing the day's scheduled live sessions, open studio hours, and new enrollments.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1 shrink-0">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-surface-variant z-10 transition-transform duration-200" id="daily" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200" for="daily"></label>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Action Bar -->
+<div class="bg-surface-container-low border-t border-outline-variant/30 p-6 flex justify-end items-center fixed bottom-0 right-0 w-[calc(100%-16rem)] md:w-[calc(100%-16rem-16rem)] z-30">
+<button class="bg-primary hover:bg-surface-tint text-on-primary font-label-md text-label-md py-3 px-8 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center gap-2 -translate-y-1 hover:-translate-y-1.5 duration-200">
+<span class="material-symbols-outlined text-sm">save</span>
+                Save Changes
+            </button>
+</div>
+</main>
+<script>
+        // Simple toggle interaction logic for demonstration
+        document.querySelectorAll('.toggle-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                // Logic would go here in production
+            });
+        });
+    </script>
+</body></html>

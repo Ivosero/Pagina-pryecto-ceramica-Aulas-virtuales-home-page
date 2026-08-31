@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ceramic Studio - Course Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e4e2de",
+                        "tertiary-fixed": "#ffdcc3",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container": "#efeeea",
+                        "primary-fixed-dim": "#ffb59a",
+                        "inverse-surface": "#30312e",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e4e2de",
+                        "primary-fixed": "#ffdbce",
+                        "outline": "#87736c",
+                        "secondary-container": "#ffca98",
+                        "on-primary-fixed-variant": "#743419",
+                        "tertiary-container": "#986b46",
+                        "inverse-on-surface": "#f2f0ed",
+                        "surface": "#fbf9f5",
+                        "primary": "#8f482c",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#2c1600",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#7d562d",
+                        "on-surface-variant": "#54433d",
+                        "secondary-fixed-dim": "#f0bd8b",
+                        "surface-bright": "#fbf9f5",
+                        "on-secondary-fixed-variant": "#623f18",
+                        "surface-tint": "#924a2e",
+                        "on-tertiary-fixed-variant": "#643e1e",
+                        "surface-container-high": "#eae8e4",
+                        "tertiary": "#7c5330",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dbdad6",
+                        "primary-container": "#ad6042",
+                        "on-background": "#1b1c1a",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdcbd",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#f3bb91",
+                        "on-secondary-container": "#7a532a",
+                        "on-primary-fixed": "#380d00",
+                        "on-surface": "#1b1c1a",
+                        "on-tertiary-fixed": "#2f1500",
+                        "surface-container-low": "#f5f3ef",
+                        "inverse-primary": "#ffb59a",
+                        "outline-variant": "#d9c1b9",
+                        "background": "#fbf9f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "stack-sm": "16px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "80px",
+                        "stack-md": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fbf9f5; color: #1b1c1a; }
+        .glass-panel { background: rgba(245, 243, 239, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(228, 226, 222, 0.5); }
+        .ambient-shadow { box-shadow: 0 10px 40px -10px rgba(188, 108, 77, 0.08); }
+        .ambient-shadow-hover:hover { box-shadow: 0 15px 50px -10px rgba(188, 108, 77, 0.12); transform: translateY(-2px); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-dim text-primary dark:text-primary-fixed-dim font-body-md text-body-md shadow-lg shadow-secondary/5 flex flex-col p-stack-sm gap-4 z-50">
+<div class="mb-stack-md">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Learning Portal</h1>
+<p class="text-on-surface-variant font-body-md text-sm mt-1">Mastering Glazes</p>
+</div>
+<div class="flex flex-col gap-2 flex-grow overflow-y-auto pr-2">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 p-3 bg-tertiary-container/20 text-on-tertiary-container font-semibold rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span>Modules</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">group</span>
+<span>Community</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">folder_open</span>
+<span>Resources</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help_outline</span>
+<span>Support</span>
+</a>
+</div>
+<div class="mt-auto pt-4 border-t border-surface-variant">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg hover:bg-primary-container transition-colors shadow-sm">Continue Learning</button>
+<div class="mt-4 flex items-center gap-3">
+<img alt="Student Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A small circular profile picture of a young pottery student in a well-lit ceramics studio, wearing a subtle earth-toned apron. Light mode aesthetic, sharp focus, professional headshot style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVkas7CogvS4PI7ohOyyaREUb_a4KKHN-Z_Q79hCodasZ5-ntmeTxl-tsjJSL8vFXDd-h4HpraJ0_NEJs8uymKnMxLvoM6zRfVJU3bdUz0N_ytZI90Aeft5rD2abnMF64YrEMwrxb2BfMQhE3PYvIKxumaJv1F07gOasf7nZVxc_JpnAumN9SAtnsQI8ERz3UyY7kIdte7SsPoabuxcovrUkiJ7e1WQiWFxtAUgVFwCaDC35dT5wGPJw"/>
+<span class="font-body-md text-sm text-on-surface">Alex Studio</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-64 flex-grow flex flex-col relative w-full bg-background min-h-screen">
+<!-- TopNavBar (Admin/Centered Style Adapted for Page Context) -->
+<header class="w-full h-16 sticky top-0 z-40 bg-surface-bright dark:bg-surface-dim shadow-sm flex justify-between items-center px-gutter font-label-md text-label-md uppercase tracking-wider text-primary dark:text-primary-fixed-dim">
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant">Ceramics for Beginners</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 scale-95 duration-150">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 scale-95 duration-150">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<div class="max-w-container-max mx-auto w-full px-gutter md:px-margin-desktop py-stack-md flex-grow">
+<!-- Hero Section -->
+<section class="mb-stack-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div>
+<p class="font-label-md text-label-md text-primary mb-2">Course Overview</p>
+<h1 class="font-display-lg-mobile md:font-display-lg text-on-surface text-display-lg-mobile md:text-display-lg">Ceramics for Beginners</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-2xl">Discover the tactile joy of clay. This comprehensive foundational course guides you from your first wedge to your final fired piece, emphasizing intentionality and craft.</p>
+</div>
+<!-- Video Placeholder -->
+<div class="w-full aspect-video rounded-[24px] overflow-hidden relative ambient-shadow group cursor-pointer">
+<img alt="Course Introduction Video" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully lit, high-quality photograph of raw terracotta clay being worked on a pottery wheel by artisan hands. The setting is a minimalist, airy studio with natural light spilling across the wooden workspace. Shallow depth of field, warm earth tones, editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdxS3L0_FIXSwR2hA0x8uObTXM-ECnC2Lh2Udb4UcvdvTUnaOLVgG1-8VxQGbqLbsJBXNSSLGRHdBmIFXhJVG1v40TZWgUJ42UiteXP30nRPhWWb6iEOD6vIJ_V5tvaeTcP9pltiUvbEK3kKIjrtU2RQUpKiegbbQbER7wZnfp14A0yR8TPDlAP337Q1gNcYWOHq_eXvBH84m4LtnSSZ7zjWI8ACePGYzr5xiyQ3pFnvEM9eHnANRsAA"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center transition-background duration-300 group-hover:bg-black/30">
+<div class="w-16 h-16 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center text-primary shadow-lg transform transition-transform duration-300 group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Course Info Sidebar (Right) -->
+<div class="lg:col-span-4 glass-panel rounded-xl p-6 flex flex-col gap-6 mt-12 lg:mt-0 sticky top-24">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<span class="font-body-md text-body-md">4 Weeks • Self-paced</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">bar_chart</span>
+<span class="font-body-md text-body-md">Beginner Level</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">award_star</span>
+<span class="font-body-md text-body-md">Certificate of Completion</span>
+</div>
+</div>
+<div class="border-t border-outline-variant/50 pt-6">
+<p class="font-label-md text-label-md text-on-surface-variant mb-4">Your Instructor</p>
+<div class="flex items-center gap-4">
+<img alt="Instructor Elena Rostova" class="w-16 h-16 rounded-full object-cover border border-surface-variant" data-alt="A portrait of an experienced master ceramicist in a bright studio, wearing a linen shirt dusted with dry clay. The lighting is soft and natural, conveying wisdom, patience, and artistic dedication in a modern minimalist setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy9dBVGpbBAQzVMcZ6772odDVIegVoNJcV3e0n2wvEe8G_Ntjc_cBr0LUAEBd_-9qv0q7g-hBj2hXN4VlGMQC9CxqIo0IH2V8nEcUKAI0AjizhmZYmiSNUxBs-SEWPTY1uqt_w68OKWTDcEJB5rSpcEX-OH8UCz2dnMpVk5Gpd2ZqeNjO1MYUtMWoSZtjU6Xyjv0pij6kF9mWb05iv5JnmykzSmYjqEM1yTEB6SGKWop7w021IBc7ASA"/>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-xl">Elena Rostova</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Master Ceramicist, 15+ Yrs</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl hover:bg-primary-container transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 mt-2">Start Lesson 1</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="w-full py-stack-lg bg-surface-container-highest dark:bg-inverse-surface text-primary dark:text-primary-fixed-dim font-body-md text-body-md mt-auto">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-stack-md">
+<div class="col-span-1 md:col-span-4 mb-8">
+<h2 class="font-headline-lg text-headline-lg text-primary">Ceramic Studio</h2>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-t border-outline-variant/30 pt-8">
+<p class="text-on-surface-variant">© 2024 Ceramic Art Studio. Crafted with intention.</p>
+<div class="flex flex-wrap gap-6">
+<a class="text-on-surface-variant hover:text-primary duration-200 transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary duration-200 transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary duration-200 transition-colors" href="#">Studio Locations</a>
+<a class="text-on-surface-variant hover:text-primary duration-200 transition-colors" href="#">Careers</a>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

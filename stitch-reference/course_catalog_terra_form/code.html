@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Catalog - Ceramic Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#743419",
+                        "on-tertiary-container": "#fffbff",
+                        "primary-fixed-dim": "#ffb59a",
+                        "on-secondary-fixed": "#2c1600",
+                        "surface-variant": "#e4e2de",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c1a",
+                        "surface": "#fbf9f5",
+                        "secondary": "#7d562d",
+                        "inverse-surface": "#30312e",
+                        "surface-dim": "#dbdad6",
+                        "tertiary-fixed": "#ffdcc3",
+                        "on-secondary-fixed-variant": "#623f18",
+                        "on-primary-fixed": "#380d00",
+                        "outline": "#87736c",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#7a532a",
+                        "inverse-on-surface": "#f2f0ed",
+                        "primary-container": "#ad6042",
+                        "on-surface-variant": "#54433d",
+                        "tertiary": "#7c5330",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#643e1e",
+                        "on-background": "#1b1c1a",
+                        "background": "#fbf9f5",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#eae8e4",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#ffca98",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#f3bb91",
+                        "primary": "#8f482c",
+                        "surface-tint": "#924a2e",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#efeeea",
+                        "primary-fixed": "#ffdbce",
+                        "surface-container-highest": "#e4e2de",
+                        "on-tertiary-fixed": "#2f1500",
+                        "surface-bright": "#fbf9f5",
+                        "secondary-fixed-dim": "#f0bd8b",
+                        "inverse-primary": "#ffb59a",
+                        "outline-variant": "#d9c1b9",
+                        "tertiary-container": "#986b46",
+                        "surface-container-low": "#f5f3ef",
+                        "secondary-fixed": "#ffdcbd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "80px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-sm": "16px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "stack-md": "32px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(188, 108, 77, 0.08);
+        }
+        .ambient-shadow-hover:hover {
+            box-shadow: 0 20px 40px -10px rgba(188, 108, 77, 0.15);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-[100px]">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm shadow-primary/5 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-desktop py-gutter max-w-container-max mx-auto hidden md:flex">
+<a class="font-display-lg-mobile text-display-lg-mobile text-primary" href="#">Ceramic Studio</a>
+<div class="flex items-center gap-stack-md font-label-md text-label-md uppercase tracking-widest">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="text-primary border-b border-primary pb-1 hover:opacity-80 transition-opacity" href="#">Courses</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="#">Contact</a>
+</div>
+<a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md uppercase tracking-widest hover:bg-primary/90 transition-colors shadow-sm" href="#">Student Login</a>
+</div>
+<!-- Mobile Nav Placeholder (Simplistic) -->
+<div class="flex md:hidden justify-between items-center px-margin-mobile py-4 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<a class="font-display-lg-mobile text-display-lg-mobile text-primary" href="#">Ceramic Studio</a>
+<button class="text-on-surface"><span class="material-symbols-outlined" data-icon="menu">menu</span></button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg gap-stack-lg">
+<!-- Header Section -->
+<section class="text-center max-w-[720px] mx-auto space-y-stack-sm w-full">
+<h1 class="font-display-lg text-display-lg md:font-display-lg text-primary md:text-display-lg font-headline-lg-mobile text-headline-lg-mobile">Explore Our Courses</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Discover the art of ceramics in our thoughtfully curated studio environment. Whether you are beginning your journey or refining your craft, our curriculum offers hands-on guidance from master artisans.
+            </p>
+</section>
+<!-- Filter Bar -->
+<section class="w-full flex flex-col md:flex-row justify-between items-center gap-stack-sm bg-surface-container-low p-gutter rounded-xl ambient-shadow">
+<div class="flex items-center gap-4 w-full md:w-auto">
+<span class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant">Filters:</span>
+<div class="relative w-full md:w-48">
+<select class="w-full bg-transparent border-b border-outline-variant py-2 focus:outline-none focus:border-tertiary focus:ring-0 font-body-md text-body-md text-on-surface appearance-none pr-8">
+<option value="all">All Levels</option>
+<option value="foundation">Foundation</option>
+<option value="intermediate">Intermediate</option>
+<option value="advanced">Advanced</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<div class="relative w-full md:w-48">
+<select class="w-full bg-transparent border-b border-outline-variant py-2 focus:outline-none focus:border-tertiary focus:ring-0 font-body-md text-body-md text-on-surface appearance-none pr-8">
+<option value="all">All Formats</option>
+<option value="in-studio">In-Studio</option>
+<option value="online">Online</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">
+                Showing 4 Courses
+            </div>
+</section>
+<!-- Course Grid -->
+<section class="w-full grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Course Card 1 -->
+<article class="bg-surface-container-lowest rounded-[24px] overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 flex flex-col border border-outline-variant/20">
+<div class="relative h-64 w-full">
+<img class="object-cover w-full h-full" data-alt="Close up shot of hands shaping wet clay on a pottery wheel in a sunlit ceramic studio. The scene is bright and airy with warm ivory tones and terracotta accents. Minimalist editorial style, high quality photography capturing the tactile nature of the craft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOgjdAEvljgTiuPYlyfc5uEded4opScCtcjjXQyNnZ7NwS_yn1OyEZs7vlGQCJwmdNVu-sLA1Y9i9_J8GrSeos0aNUmQNVpyfJeJ9HGe5mqrYS7to-NGxJKmEi3x0Y1qtkBDKPwwPNW4w7SWl8oAG5JBs8nONE_sXqLCfd5VLCwTzfoq0C86vzndlqIpxmdtHfLKXkM6-QUawQrpZ-DtotVi4Pp8LAb3azCPn7RhcrAWGUkLg0lGk_tg"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-md text-label-md text-primary uppercase tracking-widest">
+                        Foundation
+                    </div>
+</div>
+<div class="p-gutter flex flex-col flex-grow gap-stack-sm">
+<div class="flex justify-between items-start gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Wheel Throwing Basics</h3>
+<span class="font-body-lg text-body-lg text-tertiary">$150</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Master the fundamentals of centering and pulling cylinders on the potter's wheel in this comprehensive introductory course.
+                    </p>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-outline-variant/30">
+<span class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span> In-Studio
+                        </span>
+<a class="text-primary font-label-md text-label-md uppercase tracking-widest hover:text-tertiary transition-colors flex items-center gap-1" href="#">
+                            View Details <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Course Card 2 -->
+<article class="bg-surface-container-lowest rounded-[24px] overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 flex flex-col border border-outline-variant/20">
+<div class="relative h-64 w-full">
+<img class="object-cover w-full h-full" data-alt="Detailed view of a ceramic vase being glazed with a deep blue and earthy brown finish. Soft natural lighting highlights the texture of the vessel. Minimalist editorial aesthetic, warm terracotta and ivory surroundings, focusing on the refined craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwXX0CSZC4I6n6ZDS8bSFeiyEUDpfrpDlmRd1jr1PcDfIDuvlfJoFCNkxCayLJIFIQClOF1vwW53U-6q1Q8YklZZqCKbxgzulg-iPz6zHhcuP4lQjsjqPtITLVusz1P6RT0SQ_ufRrQx-60Ugw4mltRXvTg3PIhXleRBz9zQTenfPHD2BNYkr24jpcYi1aR7WEnViIgjkhqRfRPhC6zbYQX4AcrZ_6bbMIZDVJRlMd1gQ7pSdjgPGigA"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-md text-label-md text-primary uppercase tracking-widest">
+                        Advanced
+                    </div>
+</div>
+<div class="p-gutter flex flex-col flex-grow gap-stack-sm">
+<div class="flex justify-between items-start gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Advanced Glazing</h3>
+<span class="font-body-lg text-body-lg text-tertiary">$220</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Explore complex glazing techniques, layering, and firing processes to achieve stunning, unique finishes on your ceramic pieces.
+                    </p>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-outline-variant/30">
+<span class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="laptop_mac">laptop_mac</span> Online
+                        </span>
+<a class="text-primary font-label-md text-label-md uppercase tracking-widest hover:text-tertiary transition-colors flex items-center gap-1" href="#">
+                            View Details <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Course Card 3 -->
+<article class="bg-surface-container-lowest rounded-[24px] overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 flex flex-col border border-outline-variant/20">
+<div class="relative h-64 w-full">
+<img class="object-cover w-full h-full" data-alt="Hands working on a slab-built ceramic bowl on a wooden workbench. Tools and raw clay are visible in the soft focus background. The lighting is natural and warm, emphasizing the tactile quality of the materials in a serene studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-cN58m_Mvc3YCkvTpWALPzkyaxEHk1chX1tqmeQAn5dkhHa8OLwjg1CJxrUEhz7DX_M2H5A6H9AI-DiWaEDt4Yv_mRpgIz-0fSesCp6JMrEwejG33XxklcOJUgCdQlLwkBZxqe1b4WGBJrmJSS0WdgiGTYUejAJPegOYEfX7rMOEYJH4SG9KjWNEMiZgIRHj4xOuY933KJYZFp1S55WUlWhtYShTZsfvEOrQXyrFLdv-DgwUE5wqTEg"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-md text-label-md text-primary uppercase tracking-widest">
+                        Foundation
+                    </div>
+</div>
+<div class="p-gutter flex flex-col flex-grow gap-stack-sm">
+<div class="flex justify-between items-start gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Hand Building Techniques</h3>
+<span class="font-body-lg text-body-lg text-tertiary">$120</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Discover the versatility of clay through pinching, coiling, and slab building to create organic and structural forms without a wheel.
+                    </p>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-outline-variant/30">
+<span class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span> In-Studio
+                        </span>
+<a class="text-primary font-label-md text-label-md uppercase tracking-widest hover:text-tertiary transition-colors flex items-center gap-1" href="#">
+                            View Details <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Course Card 4 -->
+<article class="bg-surface-container-lowest rounded-[24px] overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 flex flex-col border border-outline-variant/20">
+<div class="relative h-64 w-full">
+<img class="object-cover w-full h-full" data-alt="A neat arrangement of glass jars containing various ceramic glaze powders and test tiles on a clean, light wood studio shelf. The aesthetic is scientific yet artistic, with warm ambient lighting highlighting the subtle colors of the raw materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0_Dnahr94_hqV5PPELLYn9WmPH3_xjTOfiJUFyXP3hF7C_QJeXm_CSo3lYarm1MzN0bP43F-G-riAswVFNY5zQzfZfIgDd_IoovKPZuKKnB9WUMx1cxXKD96IrOIa81-Qoy9D1JJnyChCwpnTH5jBLoqruPi8q40uN60GYvxqq-WgNUczMWRwDg57EDBGc1RVL8qTKtS5AfV2FYmdJ5GUVroUiznnAOrQebRbBRUZxcmd7W8byxGx3w"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-md text-label-md text-primary uppercase tracking-widest">
+                        Intermediate
+                    </div>
+</div>
+<div class="p-gutter flex flex-col flex-grow gap-stack-sm">
+<div class="flex justify-between items-start gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Ceramic Chemistry</h3>
+<span class="font-body-lg text-body-lg text-tertiary">$180</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Delve into the science behind clay bodies and glazes. Learn how to formulate your own recipes for specific temperatures and effects.
+                    </p>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-outline-variant/30">
+<span class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="laptop_mac">laptop_mac</span> Online
+                        </span>
+<a class="text-primary font-label-md text-label-md uppercase tracking-widest hover:text-tertiary transition-colors flex items-center gap-1" href="#">
+                            View Details <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-highest mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Ceramic Studio</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Ceramic Studio. Handcrafted Excellence.</p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col md:flex-row justify-end items-start md:items-center gap-6 font-body-md text-body-md text-on-surface-variant">
+<a class="hover:text-primary hover:underline decoration-tertiary transition-all duration-200" href="#">Privacy Policy</a>
+<a class="hover:text-primary hover:underline decoration-tertiary transition-all duration-200" href="#">Terms of Service</a>
+<a class="hover:text-primary hover:underline decoration-tertiary transition-all duration-200" href="#">Shipping &amp; Returns</a>
+<a class="hover:text-primary hover:underline decoration-tertiary transition-all duration-200" href="#">Sustainability</a>
+</div>
+</div>
+</footer>
+</body></html>

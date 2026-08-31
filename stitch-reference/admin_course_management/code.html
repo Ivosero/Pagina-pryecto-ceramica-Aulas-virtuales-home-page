@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Management - Terra &amp; Form</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#743419",
+                        "on-secondary-fixed": "#2c1600",
+                        "surface-variant": "#e4e2de",
+                        "on-secondary": "#ffffff",
+                        "outline": "#87736c",
+                        "surface-container": "#efeeea",
+                        "on-surface-variant": "#54433d",
+                        "primary-container": "#ad6042",
+                        "on-secondary-container": "#7a532a",
+                        "primary": "#8f482c",
+                        "secondary-fixed": "#ffdcbd",
+                        "on-secondary-fixed-variant": "#623f18",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary-fixed": "#2f1500",
+                        "outline-variant": "#d9c1b9",
+                        "primary-fixed-dim": "#ffb59a",
+                        "secondary": "#7d562d",
+                        "secondary-container": "#ffca98",
+                        "surface": "#fbf9f5",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fbf9f5",
+                        "tertiary-fixed": "#ffdcc3",
+                        "secondary-fixed-dim": "#f0bd8b",
+                        "on-surface": "#1b1c1a",
+                        "surface-dim": "#dbdad6",
+                        "tertiary": "#7c5330",
+                        "on-background": "#1b1c1a",
+                        "surface-container-low": "#f5f3ef",
+                        "on-error-container": "#93000a",
+                        "background": "#fbf9f5",
+                        "primary-fixed": "#ffdbce",
+                        "inverse-on-surface": "#f2f0ed",
+                        "inverse-surface": "#30312e",
+                        "surface-container-highest": "#e4e2de",
+                        "on-primary-fixed": "#380d00",
+                        "on-tertiary-fixed-variant": "#643e1e",
+                        "on-tertiary-container": "#fffbff",
+                        "inverse-primary": "#ffb59a",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#eae8e4",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#986b46",
+                        "tertiary-fixed-dim": "#f3bb91",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#924a2e",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "card": "24px",
+                        "button": "12px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "stack-lg": "80px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(188, 108, 77, 0.08);
+        }
+        .ambient-shadow-hover:hover {
+            box-shadow: 0 20px 40px -5px rgba(188, 108, 77, 0.15);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component) -->
+<nav class="h-screen w-72 flex flex-col fixed left-0 top-0 bg-surface-container-low dark:bg-surface-dim shadow-[20px_0_40px_rgba(188,108,77,0.04)] z-50 hidden md:flex">
+<div class="flex flex-col h-full py-stack-sm">
+<!-- Header -->
+<div class="px-gutter mb-stack-md mt-4">
+<div class="flex items-center gap-4">
+<img alt="Terra &amp; Form Admin Avatar" class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="A small, elegant circular profile picture of an administrator in a modern ceramic studio, warmly lit, wearing a neutral-toned apron over a simple shirt. Minimalist light mode aesthetic with soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfKBU0b71UwQbOsJqEUis5ls146cexgZ-KsBKBujtgS9VVIo7x0W35zN9OhvHPl2fZsdbBqRyOJTVuXDgVMSzTJq0OI220HZT6VU4zsKYweUqvfL3JtBjFKlxBv-ic4HsqrxcPzCWx54inhyVxxLYhWZUeVT05LrWHghUquYsAyeIqk8eKUzmm2bP_W86OVZPLW1uw60xUtBPQcMPYNe8h03IxUcWQPxZs8--ZD-zMYtR1SKOD1neqxg"/>
+<div>
+<h2 class="font-headline-md text-headline-md font-semibold text-primary dark:text-primary-fixed-dim text-xl">Terra &amp; Form</h2>
+<p class="text-on-surface-variant font-label-md text-xs mt-1 uppercase tracking-widest">Studio Admin</p>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-2 px-4">
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 scale-98 active:opacity-80 transition-all font-label-md text-label-md uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                            Dashboard
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-primary dark:text-primary-fixed-dim font-semibold border-r-2 border-primary dark:border-primary-fixed-dim bg-surface-container-high dark:bg-surface-container-highest font-label-md text-label-md uppercase" href="#">
+<span class="material-symbols-outlined filled" data-icon="auto_stories">auto_stories</span>
+                            Course Catalog
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 scale-98 active:opacity-80 transition-all font-label-md text-label-md uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                            Student Progress
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 scale-98 active:opacity-80 transition-all font-label-md text-label-md uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+                            Studio Schedule
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 scale-98 active:opacity-80 transition-all font-label-md text-label-md uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+                            Resource Library
+                        </a>
+</li>
+</ul>
+</div>
+<!-- CTA -->
+<div class="px-gutter mt-auto mb-stack-sm">
+<button class="w-full bg-primary hover:bg-surface-tint text-on-primary font-label-md text-label-md py-3 rounded-button shadow-sm hover:shadow-md transition-all duration-200 uppercase tracking-widest flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Create New Course
+                </button>
+</div>
+<!-- Footer Tabs -->
+<div class="border-t border-outline-variant/30 mt-4 pt-4 px-4">
+<ul class="space-y-2">
+<li>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 font-label-md text-label-md uppercase text-xs" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+                            Settings
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors duration-200 font-label-md text-label-md uppercase text-xs" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help_outline">help_outline</span>
+                            Support
+                        </a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-72 min-h-screen flex flex-col w-full relative">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-288px)] h-20 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md z-40 flex justify-between items-center px-margin-mobile md:px-margin-desktop transition-all duration-300">
+<!-- Left: Branding / Search -->
+<div class="flex items-center gap-6">
+<button class="md:hidden text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-semibold text-primary dark:text-primary-fixed-dim text-2xl hidden md:block">Admin Portal</h1>
+<div class="relative hidden sm:block w-64 md:w-80 ml-4">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/70 text-sm">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2.5 pl-10 pr-4 text-sm focus:ring-1 focus:ring-outline-variant/50 transition-shadow text-on-surface placeholder:text-on-surface-variant/50" placeholder="Search resources..." type="text"/>
+</div>
+</div>
+<!-- Right: Actions -->
+<div class="flex items-center gap-4 md:gap-6">
+<button class="hidden md:flex text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95 items-center gap-2 font-label-md text-label-md uppercase tracking-wider text-xs">
+<span class="material-symbols-outlined text-lg" data-icon="publish">publish</span>
+                    Publish Changes
+                </button>
+<div class="flex items-center gap-3 border-l border-outline-variant/30 pl-4 md:pl-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95 relative p-2">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95 p-2 hidden sm:block">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<img alt="Administrator Profile" class="w-9 h-9 rounded-full object-cover ml-2 cursor-pointer border border-outline-variant/20 hover:border-primary/50 transition-colors md:hidden" data-alt="A small, elegant circular profile picture of an administrator in a modern ceramic studio, warmly lit, wearing a neutral-toned apron over a simple shirt. Minimalist light mode aesthetic with soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCopEkQC5Dq0CWxxDZWZhOMPjO_6RpE4jp8-9evZEOZaDOp4RJ_ErHcs8WQ7H5fVre6xpxzivi_JTLFlKbgcsyeobPBNkF6xDEilUrGE1XllKJpnMz4oAs9BMPaXaNJvJ1SqUm2LcVLmTCJT3LhGSo5_rgQDIV34j1IgZWDgmyuReBtbPu_Mz6hB5sMgKtcYcZmCdmFLhZYcfPr7j_0V8kUaQPihecfuBW06zSwcFY3HKlkPDsWYzPnTg"/>
+</div>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="pt-28 pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto w-full">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-stack-md">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Course Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Organize your curriculum and manage course availability.</p>
+</div>
+<button class="bg-primary hover:bg-surface-tint text-on-primary font-label-md text-label-md py-3 px-6 rounded-button shadow-sm hover:shadow-md transition-all duration-200 uppercase tracking-widest flex items-center justify-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined">add</span>
+                    Create New Course
+                </button>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="bg-surface-container-low rounded-card p-4 md:p-6 mb-stack-md flex flex-col lg:flex-row gap-4 justify-between items-center ambient-shadow border border-surface-container-high">
+<div class="flex flex-wrap items-center gap-4 w-full lg:w-auto">
+<div class="relative w-full sm:w-72">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/60">search</span>
+<input class="w-full bg-surface border-none rounded-full py-3 pl-12 pr-4 text-sm focus:ring-1 focus:ring-primary/30 transition-shadow text-on-surface placeholder:text-on-surface-variant/50 shadow-sm" placeholder="Search courses by title..." type="text"/>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto overflow-x-auto pb-2 sm:pb-0 hide-scrollbar">
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface text-on-surface font-label-md text-xs uppercase tracking-wider hover:border-primary hover:text-primary transition-colors whitespace-nowrap flex items-center gap-1">
+                            Category: All <span class="material-symbols-outlined text-sm">arrow_drop_down</span>
+</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface text-on-surface font-label-md text-xs uppercase tracking-wider hover:border-primary hover:text-primary transition-colors whitespace-nowrap flex items-center gap-1">
+                            Status: All <span class="material-symbols-outlined text-sm">arrow_drop_down</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full lg:w-auto justify-end">
+<span class="text-on-surface-variant font-body-md text-sm mr-2 hidden sm:block">View:</span>
+<button class="p-2 rounded-lg bg-surface-container-highest text-primary transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-highest hover:text-primary transition-colors">
+<span class="material-symbols-outlined">view_list</span>
+</button>
+</div>
+</div>
+<!-- Course Grid (Bento-inspired Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<article class="bg-surface rounded-card overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 border border-surface-container-low group flex flex-col h-full">
+<div class="relative h-48 overflow-hidden">
+<img alt="Wheel Throwing Basics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A high-quality top-down photo of hands centering a lump of wet clay on a spinning pottery wheel. The lighting is soft and natural, emphasizing the texture of the clay and the movement. Warm minimalist light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi_bQ3FHqjS5xQ1rxYypid2fzY9fptsU4JFZRNAdkecCwC3isamL_QZhVz45r_SlWXLRMkSwsGbYcK2_5mXya_WumlrIk7UL0oo5vpfczLvsrpM_R0F38Dds2ba5B-cTLMUtPheKlYblXyAXJT0DQyGlg1RFf2erB73fgCL2nZT7qyjZ_JFf7LbcIXFce9g_XGYz-L-3brXqPnl8I3N-UDM_RmeoW4v5HCkESP25nQizXz0jSRGf7cpw"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface/90 backdrop-blur-sm text-primary font-label-md text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full border border-primary/20 shadow-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                Published
+                            </span>
+</div>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm p-1.5 rounded-full text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4">
+<p class="font-label-md text-on-surface-variant text-xs uppercase tracking-widest mb-2">Wheel Throwing</p>
+<h3 class="font-headline-md text-headline-md text-on-surface text-xl group-hover:text-primary transition-colors line-clamp-2">Wheel Throwing Basics</h3>
+</div>
+<div class="flex items-center gap-4 mb-6 mt-auto">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-base">book</span>
+<span>8 Modules</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-sm border-l border-outline-variant/30 pl-4">
+<span class="material-symbols-outlined text-base">group</span>
+<span>124 Students</span>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20 mt-auto">
+<button class="flex-1 py-2 text-center rounded-lg border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-label-md text-xs uppercase tracking-wider transition-colors">Edit</button>
+<button class="flex-1 py-2 text-center rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-xs uppercase tracking-wider transition-colors">Students</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors" title="Archive">
+<span class="material-symbols-outlined text-[20px]">archive</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface rounded-card overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 border border-surface-container-low group flex flex-col h-full">
+<div class="relative h-48 overflow-hidden">
+<img alt="Advanced Glazing Techniques" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale-[20%]" data-alt="A close up photo of beautifully glazed ceramic bowls stacked delicately. The glazes feature deep reactive blues and subtle speckled whites. Soft, diffused gallery lighting. Minimalist light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB724uHIbYRKqT2QQy6JiGrY70ns_9Raqid9Y9O1VZVA6S9OM0NTVt8JMCpq_L8hd1dJ4YG8zaBz22KhFv1rXi73pAG3Q78i69YSWn5QW08B91b3DobtoBWKo4cCIxv2n2_SkwZCF5ra4b3uqgXgiLJWn-jwwWZarcYU7-sQ_u0EV_VcdFmT1Kgnx-1JVgaJRQyb87UZDd5sGZDW6eLyW7BhoF27Fbfj-M5sMrorkWY8ufpyGGxHdmKcA"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-highest/90 backdrop-blur-sm text-on-surface-variant font-label-md text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full border border-outline-variant/30 shadow-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                                Draft
+                            </span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4">
+<p class="font-label-md text-on-surface-variant text-xs uppercase tracking-widest mb-2">Glazing</p>
+<h3 class="font-headline-md text-headline-md text-on-surface text-xl group-hover:text-primary transition-colors line-clamp-2">Advanced Glazing Techniques</h3>
+</div>
+<div class="flex items-center gap-4 mb-6 mt-auto opacity-70">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-base">book</span>
+<span>12 Modules</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-sm border-l border-outline-variant/30 pl-4">
+<span class="material-symbols-outlined text-base">group</span>
+<span>0 Students</span>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20 mt-auto">
+<button class="flex-1 py-2 text-center rounded-lg bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-on-primary font-label-md text-xs uppercase tracking-wider transition-colors">Continue Editing</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface rounded-card overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 border border-surface-container-low group flex flex-col h-full">
+<div class="relative h-48 overflow-hidden">
+<img alt="Hand Building Fundamentals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A wide shot of a clean, bright ceramic studio. Wooden tables with blocks of terracotta clay ready for hand building. Tools are neatly arranged. Warm sunlight streaming through a large window. Minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-PmfxNNU6NhW0xh5YiFu4QRKh4psF4IvpHrnYAjrg_UoU3nsSJQ8ODxioeZown9njhg5YKvrekT5SMLtHBg7_osKGB8sW2ea0FZCOGNewl-zkdoEDdvRcDlEBQFrjCWOIn5I1J2WznGlzbAJjPo3DZzkyfGymWPYAB8YEu_0RP-UY9lCJOYttvx3q8oNwo_02qBWv8Ic3r8_7LLfFG10fYzQOXjcibdtRNcPnmT22B1OSG8hXj_lysw"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface/90 backdrop-blur-sm text-primary font-label-md text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full border border-primary/20 shadow-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                Published
+                            </span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4">
+<p class="font-label-md text-on-surface-variant text-xs uppercase tracking-widest mb-2">Hand Building</p>
+<h3 class="font-headline-md text-headline-md text-on-surface text-xl group-hover:text-primary transition-colors line-clamp-2">Hand Building Fundamentals</h3>
+</div>
+<div class="flex items-center gap-4 mb-6 mt-auto">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-base">book</span>
+<span>6 Modules</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-sm border-l border-outline-variant/30 pl-4">
+<span class="material-symbols-outlined text-base">group</span>
+<span>89 Students</span>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20 mt-auto">
+<button class="flex-1 py-2 text-center rounded-lg border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-label-md text-xs uppercase tracking-wider transition-colors">Edit</button>
+<button class="flex-1 py-2 text-center rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-xs uppercase tracking-wider transition-colors">Students</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors" title="Archive">
+<span class="material-symbols-outlined text-[20px]">archive</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination (Simple) -->
+<div class="mt-stack-md flex justify-center items-center gap-4">
+<button class="p-2 rounded-full border border-outline-variant text-on-surface-variant opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<span class="font-label-md text-sm text-on-surface">Page 1 of 3</span>
+<button class="p-2 rounded-full border border-outline-variant text-on-surface hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

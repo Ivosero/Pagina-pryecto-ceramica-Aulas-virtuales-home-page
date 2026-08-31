@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Schedule - Terra &amp; Form Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dbdad6",
+                    "outline": "#87736c",
+                    "inverse-primary": "#ffb59a",
+                    "primary-fixed": "#ffdbce",
+                    "surface-container": "#efeeea",
+                    "tertiary-fixed": "#ffdcc3",
+                    "inverse-on-surface": "#f2f0ed",
+                    "primary-fixed-dim": "#ffb59a",
+                    "tertiary": "#7c5330",
+                    "error-container": "#ffdad6",
+                    "secondary": "#7d562d",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#30312e",
+                    "on-tertiary-fixed-variant": "#643e1e",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#fffbff",
+                    "on-surface-variant": "#54433d",
+                    "tertiary-fixed-dim": "#f3bb91",
+                    "surface-container-highest": "#e4e2de",
+                    "on-background": "#1b1c1a",
+                    "surface-container-low": "#f5f3ef",
+                    "primary": "#8f482c",
+                    "surface-container-high": "#eae8e4",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#924a2e",
+                    "surface-bright": "#fbf9f5",
+                    "surface": "#fbf9f5",
+                    "on-secondary-container": "#7a532a",
+                    "on-primary-fixed-variant": "#743419",
+                    "on-primary-container": "#fffbff",
+                    "on-secondary-fixed": "#2c1600",
+                    "on-secondary-fixed-variant": "#623f18",
+                    "secondary-fixed": "#ffdcbd",
+                    "on-primary-fixed": "#380d00",
+                    "outline-variant": "#d9c1b9",
+                    "on-tertiary-fixed": "#2f1500",
+                    "tertiary-container": "#986b46",
+                    "primary-container": "#ad6042",
+                    "secondary-container": "#ffca98",
+                    "background": "#fbf9f5",
+                    "on-surface": "#1b1c1a",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#f0bd8b",
+                    "surface-variant": "#e4e2de",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "stack-lg": "80px",
+                    "gutter": "24px",
+                    "stack-md": "32px",
+                    "unit": "8px",
+                    "stack-sm": "16px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "display-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+             font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-variant');
+            border-radius: theme('borderRadius.full');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 20px 40px rgba(188, 108, 77, 0.04);
+        }
+        
+        .glass-header {
+             backdrop-filter: blur(12px);
+             -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-hidden h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex h-screen w-72 flex-col fixed left-0 top-0 bg-surface-container-low shadow-[20px_0_40px_rgba(188,108,77,0.04)] z-50">
+<div class="flex flex-col h-full py-stack-sm">
+<!-- Brand & Admin Info -->
+<div class="px-gutter mb-stack-md flex items-center gap-unit">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-outline-variant">
+<img alt="Terra &amp; Form Admin Avatar" class="w-full h-full object-cover" data-alt="A macro photograph of raw, unglazed terracotta clay, emphasizing its earthy texture and organic imperfections. The lighting is soft and natural, casting subtle shadows that highlight the tactile quality of the ceramic material. Minimalist, sophisticated aesthetic suitable for a high-end pottery studio avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWlGjTtY7t-Cg0rvT8iQAFg9v54dNmTZt34P6DoxWr1s20qYkeiTnuxDONc0u9Z7HRUWHALHutJ0vXTaM4jNNdA0Lp4j7P8boYR39hX1MPId0SfCyZzCj-6ggGeP3U2MSLkvZ1rzTMzudlHRInh3Zype-b5pGm6MAEUnjpLAUXGv-fAFeiLWY_Et3kh1yRTwvIMZhjGya_Kom-NkQxzp3FaIiXC02hd911-hSD7-G76o49glEoW9tokQ"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-semibold text-primary">Terra &amp; Form</h1>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mt-1">Studio Admin</p>
+</div>
+</div>
+<!-- Primary CTA -->
+<div class="px-gutter mb-stack-md">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md hover:bg-surface-tint active:scale-95 transition-all shadow-sm flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Create New Course
+                </button>
+</div>
+<!-- Main Navigation -->
+<div class="flex-1 overflow-y-auto px-unit space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">auto_stories</span>
+<span class="font-body-md text-body-md">Course Catalog</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">group</span>
+<span class="font-body-md text-body-md">Student Progress</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-primary font-semibold bg-surface-container-high border-r-2 border-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined icon-filled">calendar_today</span>
+<span class="font-body-md text-body-md">Studio Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">folder_shared</span>
+<span class="font-body-md text-body-md">Resource Library</span>
+</a>
+</div>
+<!-- Footer Navigation -->
+<div class="px-unit mt-auto pt-4 border-t border-surface-variant space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px]">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px]">help_outline</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-0 md:ml-72 flex flex-col h-screen overflow-hidden relative">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-288px)] h-20 bg-surface/80 glass-header flex justify-between items-center px-margin-desktop z-40">
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Page Title / Product Name -->
+<div class="hidden md:block">
+<h2 class="font-headline-md text-headline-md font-semibold text-primary">Admin Portal</h2>
+</div>
+<div class="flex items-center gap-gutter flex-1 justify-end">
+<!-- Search -->
+<div class="hidden lg:flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-surface-variant focus-within:border-outline-variant transition-colors group">
+<span class="material-symbols-outlined text-outline-variant group-focus-within:text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md text-on-surface w-48 placeholder-outline-variant" placeholder="Search events..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-unit">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-200 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-200 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+<!-- Primary Action -->
+<button class="hidden sm:flex bg-outline text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary transition-colors duration-300 active:scale-95">
+                    Publish Changes
+                </button>
+<!-- Profile -->
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-surface-variant cursor-pointer hover:border-primary transition-colors">
+<img alt="Administrator Profile" class="w-full h-full object-cover" data-alt="A portrait of a ceramic artist in their studio, wearing a work apron dusted with clay. The lighting is warm and natural, coming from a nearby window. The background is softly blurred, showing shelves lined with various pottery pieces in earth tones. A sophisticated, professional headshot for an admin profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGXB4vpkkcNFWI3XYtsibnAl-A8-gOx51tOMmTEvZ7V0ThS-Fw2F_AkBwlJ15L9_FfRGyjKxlUV3ZC2fE3lYR2gNBWa9Z3KhQZ08Kii_FI7xqOkE6zDtE38ifXNVgxsFS1suLkCej-IzK4aaEsyVE0Ml9E8-wFRmvh1Iry6TB0ErWGuXzLMUgwHgNPeulXE9DzdUEwDGC0yhCGRSuXGV1cO9Tr7h6GMN6EvNERXrtSVzlH2bEeU4gDDw"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto pt-[100px] px-margin-mobile md:px-margin-desktop pb-stack-lg">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-stack-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Studio Schedule</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Manage workshops, open studio hours, and private instruction across all facilities.</p>
+</div>
+<div class="flex items-center gap-4">
+<!-- View Toggles -->
+<div class="flex bg-surface-container-low rounded-lg p-1 border border-surface-variant">
+<button class="px-4 py-1.5 rounded bg-surface shadow-sm text-primary font-label-md text-label-md transition-colors">Month</button>
+<button class="px-4 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Week</button>
+<button class="px-4 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">List</button>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label-md text-label-md hover:bg-surface-tint active:scale-95 transition-all shadow-sm flex items-center gap-2 shrink-0">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add Event
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout for Schedule -->
+<div class="flex flex-col xl:flex-row gap-gutter h-[calc(100vh-240px)] min-h-[600px]">
+<!-- Main Calendar Area -->
+<div class="flex-1 bg-surface-bright rounded-2xl border border-surface-variant ambient-shadow flex flex-col overflow-hidden">
+<!-- Calendar Header -->
+<div class="flex items-center justify-between p-6 border-b border-surface-variant bg-surface-container-low/50">
+<div class="flex items-center gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">October 2023</h3>
+<div class="flex gap-1">
+<button class="p-1.5 rounded-full hover:bg-surface-variant text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button>
+<button class="p-1.5 rounded-full hover:bg-surface-variant text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary font-label-md text-label-md px-3 py-1 rounded hover:bg-surface-container-high transition-colors">Today</button>
+</div>
+<!-- Days of Week -->
+<div class="grid grid-cols-7 border-b border-surface-variant bg-surface-container-lowest">
+<div class="py-3 text-center font-label-md text-label-md text-outline">SUN</div>
+<div class="py-3 text-center font-label-md text-label-md text-outline">MON</div>
+<div class="py-3 text-center font-label-md text-label-md text-outline">TUE</div>
+<div class="py-3 text-center font-label-md text-label-md text-outline">WED</div>
+<div class="py-3 text-center font-label-md text-label-md text-outline">THU</div>
+<div class="py-3 text-center font-label-md text-label-md text-outline">FRI</div>
+<div class="py-3 text-center font-label-md text-label-md text-outline">SAT</div>
+</div>
+<!-- Calendar Grid -->
+<div class="flex-1 grid grid-cols-7 grid-rows-5 bg-surface-variant gap-[1px]">
+<!-- Row 1 -->
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer text-outline-variant">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full">1</span>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer text-outline-variant">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full">2</span>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">3</span>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">4</span>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer relative">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">5</span>
+<div class="mt-1 space-y-1">
+<div class="text-[11px] font-medium px-1.5 py-0.5 bg-secondary-container text-on-secondary-container rounded truncate border border-secondary-container/50">Wheel Basics</div>
+</div>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">6</span>
+<div class="mt-1 flex gap-1 flex-wrap">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">7</span>
+</div>
+<!-- Row 2 -->
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">8</span>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">9</span>
+<div class="mt-1 space-y-1">
+<div class="text-[11px] font-medium px-1.5 py-0.5 bg-surface-variant text-on-surface-variant rounded truncate">Maintenance</div>
+</div>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">10</span>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">11</span>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] bg-primary-fixed/20 transition-colors cursor-pointer border-2 border-primary ring-inset ring-2 ring-transparent">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full bg-primary text-on-primary">12</span>
+<div class="mt-1 space-y-1">
+<div class="text-[11px] font-medium px-1.5 py-0.5 bg-secondary-container text-on-secondary-container rounded truncate">Wheel Intensive</div>
+<div class="text-[11px] font-medium px-1.5 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed rounded truncate">Private: Sarah</div>
+</div>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">13</span>
+<div class="mt-1 flex gap-1 flex-wrap">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+</div>
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="font-body-md text-body-md inline-block w-7 h-7 text-center leading-7 rounded-full text-on-surface">14</span>
+</div>
+<!-- Fill remaining grid for visual completeness (abbreviated) -->
+<div class="bg-surface-bright p-2 min-h-[100px] hover:bg-surface-container-low transition-colors cursor-pointer col-span-7 row-span-3 bg-surface-container-lowest/50 flex items-center justify-center">
+<span class="text-outline-variant font-body-md italic">Remaining weeks...</span>
+</div>
+</div>
+</div>
+<!-- Side Panel: Day Details -->
+<div class="w-full xl:w-96 bg-surface-bright rounded-2xl border border-surface-variant ambient-shadow flex flex-col overflow-hidden shrink-0">
+<div class="p-6 border-b border-surface-variant bg-surface-container-low/30 relative">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[64px] text-tertiary">file_save_off</span>
+</div>
+<p class="font-label-md text-label-md text-outline uppercase tracking-wider mb-1 relative z-10">Selected Date</p>
+<h3 class="font-headline-md text-headline-md text-on-surface relative z-10">Thursday, Oct 12</h3>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4">
+<!-- Event Card 1 -->
+<div class="p-4 rounded-xl border border-secondary-fixed bg-secondary-fixed/10 hover:bg-secondary-fixed/20 transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-container"></div>
+<div class="flex justify-between items-start mb-2">
+<span class="text-[12px] font-semibold text-secondary px-2 py-0.5 rounded-full bg-secondary-fixed-dim/30">Workshop</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors text-[20px]">more_vert</span>
+</div>
+<h4 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1">Wheel Throwing Intensive</h4>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-3">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>10:00 AM - 1:00 PM</span>
+</div>
+<div class="pt-3 border-t border-surface-variant/50 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Small thumbnail portrait of a female pottery instructor with a warm smile, wearing a casual linen shirt, shot against a neutral studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7gIKqoPBPNmupzU3aSW_GYzJFxlyj0xs7HzrkPnTtIW6Z2AkIZrNQZTgTVYvzbHMr96_xzI75JjW-Ll2aWqfLp8For_y5und5_QIM69bO-uv-afLlxmvkgNAeT9NoL8oy5nwoQOsRDBzGtZowAMZZEVgis3_Bq9mKFx2ewSuZOs8bPXims13VDLUEolDAenfT7lHb9MXR8dQZSix11OVF7EQg56LnNyAw6hbemJvbi2fbzHQLYreGIg"/>
+</div>
+<span class="text-sm font-medium text-on-surface-variant">Elena R.</span>
+</div>
+<div class="text-sm font-medium text-secondary">8/10 Students</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="p-4 rounded-xl border border-tertiary-fixed bg-tertiary-fixed/10 hover:bg-tertiary-fixed/20 transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary-container"></div>
+<div class="flex justify-between items-start mb-2">
+<span class="text-[12px] font-semibold text-tertiary px-2 py-0.5 rounded-full bg-tertiary-fixed-dim/30">Private Lesson</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-tertiary transition-colors text-[20px]">more_vert</span>
+</div>
+<h4 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1">Glazing Techniques</h4>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-3">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>2:30 PM - 4:00 PM</span>
+</div>
+<div class="pt-3 border-t border-surface-variant/50 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant overflow-hidden flex items-center justify-center text-xs font-bold text-outline">
+                                        M
+                                    </div>
+<span class="text-sm font-medium text-on-surface-variant">Marcus T.</span>
+</div>
+<div class="text-sm font-medium text-tertiary">1/1 Student</div>
+</div>
+</div>
+<!-- Empty State (Hidden, but structural) -->
+<div class="hidden flex-col items-center justify-center py-10 text-center">
+<span class="material-symbols-outlined text-[48px] text-surface-variant mb-2">event_busy</span>
+<p class="text-on-surface-variant font-body-md">No events scheduled</p>
+<button class="mt-4 text-primary font-label-md hover:underline">Add Event</button>
+</div>
+</div>
+<div class="p-4 border-t border-surface-variant bg-surface-container-lowest">
+<button class="w-full py-2.5 border border-outline text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors">
+                            Print Day Roster
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
